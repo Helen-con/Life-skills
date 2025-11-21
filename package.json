@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 {"firebase": "9.0.0",
 "lucide-react": "latest",
 "canvas-confetti": "latest"
+=======
+{
+>>>>>>> c78b83e18910b82c000b22abfa50a12cb7e5d160
   "name": "katie’s-life-skills-&-rewards-portfolio",
   "private": true,
   "version": "0.0.0",

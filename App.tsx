@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { initializeApp } from 'firebase/app';
 import { 
@@ -458,10 +459,49 @@ const Dashboard = () => {
           <p className="text-xs text-indigo-800 font-medium"><span className="font-bold">Goal:</span> Hit a 7-day streak to unlock <span className="underline">30 mins Extra Curfew</span> this weekend! 🌙</p>
         </div>
       </div>
+=======
+
+import React, { useState } from 'react';
+import BottomNav from './components/layout/BottomNav';
+import DashboardScreen from './components/dashboard/DashboardScreen';
+import CheckinScreen from './components/checkin/CheckinScreen';
+import RewardsScreen from './components/rewards/RewardsScreen';
+import CalendarScreen from './components/calendar/CalendarScreen';
+import FinanceScreen from './components/finance/FinanceScreen';
+import { Page } from './types';
+
+const App: React.FC = () => {
+  const [activePage, setActivePage] = useState<Page>('dashboard');
+
+  const renderContent = () => {
+    switch (activePage) {
+      case 'dashboard':
+        return <DashboardScreen />;
+      case 'check-in':
+        return <CheckinScreen />;
+      case 'rewards':
+        return <RewardsScreen />;
+      case 'calendar':
+        return <CalendarScreen />;
+      case 'finance':
+        return <FinanceScreen />;
+      default:
+        return <DashboardScreen />;
+    }
+  };
+
+  return (
+    <div className="bg-background min-h-screen font-sans text-text-primary">
+      <div className="container mx-auto max-w-2xl p-4 pb-24">
+        {renderContent()}
+      </div>
+      <BottomNav activePage={activePage} setActivePage={setActivePage} />
+>>>>>>> c78b83e18910b82c000b22abfa50a12cb7e5d160
     </div>
   );
 };
 
+<<<<<<< HEAD
 const HabitCard = ({ label, sub, icon: Icon, active, onClick, color }) => {
   const colors = { sky: active ? 'bg-sky-100 border-sky-300' : 'bg-white border-slate-100', indigo: active ? 'bg-indigo-100 border-indigo-300' : 'bg-white border-slate-100', pink: active ? 'bg-pink-100 border-pink-300' : 'bg-white border-slate-100' };
   const iconColors = { sky: active ? 'text-sky-600' : 'text-slate-300', indigo: active ? 'text-indigo-600' : 'text-slate-300', pink: active ? 'text-pink-600' : 'text-slate-300' };
@@ -843,3 +883,6 @@ const BottomNav = () => {
     </div>
   );
 };
+=======
+export default App;
+>>>>>>> c78b83e18910b82c000b22abfa50a12cb7e5d160
