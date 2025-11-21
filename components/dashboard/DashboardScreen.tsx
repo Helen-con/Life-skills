@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AffirmationCard from './AffirmationCard';
 import StreakTracker from './StreakTracker';
@@ -7,7 +8,13 @@ import Card from '../ui/Card';
 import Icon from '../ui/Icon';
 import { TOKEN_ACTIONS } from '../../constants';
 
-const DashboardScreen: React.FC = () => {
+interface DashboardScreenProps {
+  totalTokens: number;
+  weeklyTokens: number;
+  streakDays: number;
+}
+
+const DashboardScreen: React.FC<DashboardScreenProps> = ({ totalTokens, weeklyTokens, streakDays }) => {
   return (
     <div className="space-y-6">
       <h1 className="font-display text-3xl font-bold text-text-primary">
@@ -15,8 +22,8 @@ const DashboardScreen: React.FC = () => {
       </h1>
       <AffirmationCard />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <StreakTracker />
-        <TokenWallet />
+        <StreakTracker streakDays={streakDays} />
+        <TokenWallet totalTokens={totalTokens} weeklyTokens={weeklyTokens} />
       </div>
       <ProgressRing />
        <Card>

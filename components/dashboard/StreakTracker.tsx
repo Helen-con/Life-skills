@@ -1,10 +1,13 @@
+
 import React from 'react';
 import Card from '../ui/Card';
 import Icon from '../ui/Icon';
 
-const StreakTracker: React.FC = () => {
-  // FIX: Explicitly type mock data as number to avoid literal type comparison error.
-  const streakDays: number = 4; // Mock data
+interface StreakTrackerProps {
+  streakDays: number;
+}
+
+const StreakTracker: React.FC<StreakTrackerProps> = ({ streakDays }) => {
   const totalDays: number = 7;
 
   return (

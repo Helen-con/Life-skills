@@ -1,11 +1,14 @@
+
 import React from 'react';
 import Card from '../ui/Card';
 import Icon from '../ui/Icon';
 
-const TokenWallet: React.FC = () => {
-    const weeklyTokens = 12;
-    const totalTokens = 85;
+interface TokenWalletProps {
+  totalTokens: number;
+  weeklyTokens: number;
+}
 
+const TokenWallet: React.FC<TokenWalletProps> = ({ totalTokens, weeklyTokens }) => {
   return (
     <Card className="bg-primary-blue text-white">
       <div className="flex items-center justify-between mb-4">
